@@ -1,7 +1,7 @@
 {
     "name": "BLE-Microbit-Gamepad",
     "version": "1.0.13",
-    "description": "Microbit Bluetooth package to make MicroBit as a two button gamepad",
+    "description": "Microbit Bluetooth package to make MicroBit as a two button + accelerometer based gamepad",
     "license": "MIT",
     "dependencies": {
         "core": "*",
@@ -23,6 +23,10 @@
         "test.ts"
     ],
     "public": true,
+    "supportedTargets": [
+        "microbit"
+    ],
+    "preferredEditor": "tsprj",
     "yotta": {
         "config": {
             "microbit-dal": {

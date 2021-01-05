@@ -32,4 +32,13 @@ namespace bluetooth {
 
         joystick->pressButton(button);
      }
+
+    /**
+     * A function to sent joystick speed
+     */
+     //% blockId=bluetooth_sendMovement block="bluetooth send joystick speed %x %y %z"
+    void sendMovement(int x, int y, int z) {
+        JoystickService *joystick = getJoystick();
+        joystick->setSpeed(x,y,z);
+    }
 }

@@ -26,9 +26,21 @@ JoystickService::JoystickService(BLE &_ble) :
 
 int JoystickService::setSpeed(int8_t x, int8_t y, int8_t z)
 {
+    // if (!connected)
+    //    return ;
+
     speed[0] = x;
     speed[1] = y;
     speed[2] = z;
+
+    joystick_report[0] = 0x00;   // release button
+    joystick_report[1] = speed[0];
+    joystick_report[2] = speed[1];
+    joystick_report[3] = speed[2];
+    joystick_report[4] = speed[3];
+
+    if (send(joystick_report))
+        failedReports++;
 
     return 0;
 }
